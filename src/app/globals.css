@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+body { @apply bg-slate-50 text-slate-900 antialiased; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+:focus-visible { outline: 2px solid #3b6cf6; outline-offset: 2px; }
+
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50; }
+.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
+.btn-ghost { @apply border border-slate-300 bg-white text-slate-700 hover:bg-slate-100; }
+.btn-danger { @apply bg-red-600 text-white hover:bg-red-700; }
+.input { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm placeholder:text-slate-400 focus:border-brand-500; }
+
+/* Rich-text content styles */
+.ProseMirror { outline: none; min-height: 60vh; line-height: 1.7; font-size: 1.0625rem; }
+.ProseMirror > * + * { margin-top: 0.75em; }
+.ProseMirror h1 { font-size: 2rem; font-weight: 700; line-height: 1.25; margin-top: 1.25em; }
+.ProseMirror h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-top: 1.1em; }
+.ProseMirror h3 { font-size: 1.2rem; font-weight: 600; line-height: 1.35; margin-top: 1em; }
+.ProseMirror ul { list-style: disc; padding-left: 1.6em; }
+.ProseMirror ol { list-style: decimal; padding-left: 1.6em; }
+.ProseMirror li > p { margin: 0; }
+.ProseMirror blockquote { border-left: 3px solid #cbd5e1; padding-left: 1em; color: #475569; }
+.ProseMirror code { background: #f1f5f9; border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.9em; }
+.ProseMirror pre { background: #0f172a; color: #e2e8f0; border-radius: 8px; padding: 0.9em 1em; overflow-x: auto; }
+.ProseMirror pre code { background: none; padding: 0; color: inherit; }
+.ProseMirror a { color: #2a55d8; text-decoration: underline; }
+.ProseMirror hr { border-color: #e2e8f0; }
+.ProseMirror p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: #94a3b8; float: left; height: 0; pointer-events: none; }
