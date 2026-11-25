@@ -40,6 +40,4 @@ This note records how AI was used on this project, what I asked for, what I chan
 - `npm run e2e`: 15 browser checks in headless Chrome covering the full user flow, plus a visual review of the screenshots.
 - **Live site, by me:** I signed in on the deployed Vercel app, created and edited a document, shared it with another account, and edited it as that account. The AI separately confirmed the public login page and the unauthenticated API response (401) from a clean browser. The AI could not type passwords in its browser, so it could not run the live login itself.
 
-## What still relies on human judgment
-- The scope cuts (no real-time collaboration, sign-up or export) and their trade-offs are listed in `ARCHITECTURE.md` and are my decisions.
-- Keyboard-only use, screen readers and browsers other than Chrome were not tested.
+
