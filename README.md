@@ -2,7 +2,7 @@
 
 A lightweight collaborative document editor inspired by Google Docs, built for the Ajaia LLC AI-Native Full Stack Developer Assignment.
 
-**Live URL:** _not deployed yet — see [Deployment](#deployment) (needs a free Turso database + Vercel account)._
+**Live URL:** https://ajaia-collaborative-docs.vercel.app
 
 ## Main features
 
