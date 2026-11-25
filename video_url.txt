@@ -1,0 +1,3 @@
+Walkthrough video: https://vimeo.com/reviews/5e782fd0-c775-465e-9983-2e016558e3c9/videos/1250140588
+Live app: https://ajaia-collaborative-docs.vercel.app
+GitHub: https://github.com/dntwaritag/ajaia-collaborative-docs

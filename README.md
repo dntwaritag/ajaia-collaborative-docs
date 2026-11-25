@@ -4,7 +4,7 @@ A lightweight collaborative document editor inspired by Google Docs, built for t
 
 **Live URL:** https://ajaia-collaborative-docs.vercel.app
 
-**Walkthrough video:** https://vimeo.com/1250140588
+**Walkthrough video:** https://vimeo.com/reviews/5e782fd0-c775-465e-9983-2e016558e3c9/videos/1250140588
 
 **Submission summary:** see [SUBMISSION.md](SUBMISSION.md) · **Architecture:** [ARCHITECTURE.md](ARCHITECTURE.md) · **AI usage:** [AI_WORKFLOW.md](AI_WORKFLOW.md)
 

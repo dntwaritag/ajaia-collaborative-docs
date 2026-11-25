@@ -6,7 +6,7 @@
 ## Links
 - **Live application URL:** https://ajaia-collaborative-docs.vercel.app
 - **GitHub repository:** https://github.com/dntwaritag/ajaia-collaborative-docs
-- **Walkthrough video (3–5 min):** https://vimeo.com/1250140588
+- **Walkthrough video (3–5 min):** https://vimeo.com/reviews/5e782fd0-c775-465e-9983-2e016558e3c9/videos/1250140588
 - **Google Drive folder:** https://drive.google.com/drive/folders/1SrjLYygtdkcZswg3r_lvBDk03nh9dVR9?usp=sharing
 
 ## What is included
@@ -17,6 +17,7 @@
 | Architecture note | `ARCHITECTURE.md` |
 | AI workflow note | `AI_WORKFLOW.md` |
 | This file | `SUBMISSION.md` |
+| Video URL (text file) | `video_url.txt` |
 | Env template | `.env.example` |
 | Automated tests | `tests/documents.test.ts`, `tests/import-validation.test.ts` (Vitest); `e2e/run.mjs` (browser) |
 | Screenshots | `docs/screenshots/*.png` |
