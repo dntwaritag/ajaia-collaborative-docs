@@ -1,21 +1,22 @@
 # AI Workflow Note
 
-This note records how AI was used on this project, what I asked for, what I changed, and how the result was checked. I (Denys Ntwaritaganzwa) directed the work and made the decisions; the AI did most of the typing.
+This note records how AI was used on this project, what I asked for, what I changed, and how the result was checked. I (Denys Ntwaritaganzwa) understood the assignment, set the direction and made the decisions; Claude Code did most of the implementation under my review.
 
 ## Tools used
 - **Claude Code (Claude Sonnet 5.5)** for planning, scaffolding, implementation, tests, debugging, browser checks and documentation. It worked in a Linux sandbox with a shell (npm, headless Chrome) and browser access.
 - No other AI tools (Copilot, Cursor, ChatGPT, image generators) were used.
 
-## My initial input and how it was refined
-1. **What I gave the AI at the start.** A master prompt of my own describing how I wanted the work done, the full text of the Ajaia LLC "AI-Native Full Stack Developer Assignment" (scope, required features, deliverables, evaluation criteria), and my CV, so the project and write-ups would match who I am. My instruction was to follow the prompt and complete the project.
-2. **Refinement.** The AI turned the assignment into a scoped plan before coding: required features first (create, rename, edit, autosave, rich text, file import, sharing, persistence), a small set of well-tested extras, and a written list of what to cut. It tied each assignment requirement to a test or a documented limitation.
-3. **My follow-up directions**, in order:
-   - "Do everything except the video": I would record the video myself.
-   - Push to my own GitHub repository, with the work split into **small incremental commits** in my name, and keep the repo free of files that were not needed.
-   - Remove the video script and placeholder files from the repository, and anything unclear.
+## How I approached the work
+1. **Understand first.** Before using any AI I read the Ajaia LLC "AI-Native Full Stack Developer Assignment" closely and broke it into the required features (create, rename, edit, autosave, rich text, file import, sharing, persistence), the deliverables (live URL, repository, video, write-ups) and the evaluation criteria. I decided what had to be done well, what could be cut, and which trade-offs I was willing to explain.
+2. **Draft my own starting point.** I wrote up my initial brief: the requirements as I understood them, the stack I expected to use, the order of work (required features first, then a few well-tested extras), and the standards I wanted met (server-side permission checks, tests, honest documentation, small incremental commits). I gave Claude Code that draft together with the assignment text and my CV, so the project and the write-ups would reflect my background.
+3. **Use AI to refine and build.** Claude Code challenged and tightened my draft into a scoped plan, then implemented it. For each requirement it proposed a test or a documented limitation. I reviewed the plan and the code, and redirected it when I disagreed.
+4. **My follow-up directions**, in order:
+   - Build everything except the video, which I would record myself.
+   - Push to my own GitHub repository, with the work split into **small incremental commits** in my name, and keep the repository free of files that are not needed.
+   - Remove the video script and placeholder files, and anything unclear.
    - Deploy the app: I signed in to Vercel and the AI configured the project, the Turso database and the environment variables.
-   - Update the repository so the submission is complete, and document the AI use (this file).
-4. **What the AI could not do, so I did it:** push to GitHub (the sandbox had no write access to my account; I pushed from my own machine), create the Drive folder in my account, record the video, and run the final manual check on the live site.
+   - Complete the submission and document the AI use (this file).
+5. **What I did myself rather than the AI:** push to GitHub from my own machine (the AI's sandbox had no write access to my account), create the Drive folder, record the video, and test the live site by signing in, editing and sharing documents.
 
 ## Where AI materially sped things up
 - **Scaffolding:** project config, Tailwind/ESLint/TypeScript setup, route handlers, Zod validation and the dashboard/editor UI.
