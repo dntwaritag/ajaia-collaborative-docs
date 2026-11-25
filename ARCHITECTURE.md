@@ -53,7 +53,7 @@ The editor emits TipTap JSON on each change. Changes are debounced (1 s) and sen
 A `handle()` wrapper maps `ServiceError` and Zod errors to friendly JSON (`400/401/403/404/413/415`) and turns anything unexpected into a generic 500 message while logging the detail server-side. The client shows errors as toasts or inline alerts.
 
 ## Deployment architecture
-Vercel (Next.js serverless functions) + Turso (libSQL over HTTPS). Env vars: `DATABASE_URL`, `DATABASE_AUTH_TOKEN`, `AUTH_SECRET`. `npm run db:setup` against the production URL creates tables and demo users.
+Vercel (Next.js serverless functions) + Turso (libSQL over HTTPS). Env vars: `AUTH_SECRET` plus `TURSO_DATABASE_URL` / `TURSO_AUTH_TOKEN` (or the equivalent `DATABASE_URL` / `DATABASE_AUTH_TOKEN`). The app creates its tables and seeds the demo users on first start, so no separate setup step is needed in production; `npm run db:setup` does the same by hand. Live at https://ajaia-collaborative-docs.vercel.app.
 
 ## Intentionally excluded (and why)
 - **Real-time collaboration / CRDT:** biggest scope item; autosave + permissions demonstrate the product flow within the timebox.

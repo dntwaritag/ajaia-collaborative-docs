@@ -4,6 +4,10 @@ A lightweight collaborative document editor inspired by Google Docs, built for t
 
 **Live URL:** https://ajaia-collaborative-docs.vercel.app
 
+**Walkthrough video:** https://vimeo.com/1250140588
+
+**Submission summary:** see [SUBMISSION.md](SUBMISSION.md) · **Architecture:** [ARCHITECTURE.md](ARCHITECTURE.md) · **AI usage:** [AI_WORKFLOW.md](AI_WORKFLOW.md)
+
 ## Main features
 
 - **Documents:** create, rename, edit, autosave (1 s debounce), reopen, delete (with confirmation). Save status is always visible: *Saved / Unsaved changes… / Saving… / Save failed — retrying*.
@@ -34,8 +38,8 @@ npm run dev                   # http://localhost:3000
 
 | Variable | Purpose |
 | --- | --- |
-| `DATABASE_URL` | `file:./dev.db` locally; `libsql://<db>.turso.io` in production |
-| `DATABASE_AUTH_TOKEN` | Turso token (leave empty locally) |
+| `DATABASE_URL` | `file:./dev.db` locally; `libsql://<db>.turso.io` in production (`TURSO_DATABASE_URL` is also accepted) |
+| `DATABASE_AUTH_TOKEN` | Turso token, leave empty locally (`TURSO_AUTH_TOKEN` is also accepted) |
 | `AUTH_SECRET` | Secret used to sign session cookies (16+ chars; required in production) |
 
 ### Database setup / migrations / seed
@@ -87,16 +91,11 @@ The e2e script drives a real browser through: login failure, create/rename/forma
 
 ## Deployment
 
-SQLite files do not persist on Vercel's serverless filesystem, so production uses **Turso** (hosted libSQL, free tier) through the same code path.
+The app is deployed on **Vercel** with a **Turso** (hosted libSQL) database, because SQLite files do not persist on Vercel's serverless filesystem. The same code path is used locally and in production; only the connection URL differs.
 
-```bash
-# 1. Create a free database
-turso db create ajaia-docs && turso db show ajaia-docs --url && turso db tokens create ajaia-docs
-# 2. Create the tables + demo users in it
-DATABASE_URL=libsql://… DATABASE_AUTH_TOKEN=… npm run db:setup
-# 3. Deploy
-npx vercel --prod      # set DATABASE_URL, DATABASE_AUTH_TOKEN, AUTH_SECRET in the Vercel project
-```
+1. Create a free Turso database (or add the Turso integration from the Vercel Marketplace, which sets `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` for you).
+2. Import the GitHub repository into Vercel and set `AUTH_SECRET` (`openssl rand -base64 32`) plus the two Turso variables.
+3. Deploy. On the first request the app creates its tables and seeds the three demo accounts automatically. You can also run `npm run db:setup` against the remote database yourself.
 
 ## Known limitations
 
@@ -105,4 +104,4 @@ npx vercel --prod      # set DATABASE_URL, DATABASE_AUTH_TOKEN, AUTH_SECRET in t
 - Import: `.docx` images/tables are dropped; `.md` raw HTML is stripped by the editor schema.
 - No export, version history, comments, or document attachments.
 - No rate limiting on login; CSRF is mitigated with `SameSite=Lax` cookies and JSON-only mutations rather than tokens.
-- Not yet deployed from this build environment (no Vercel/Turso credentials were available).
+- Demo accounts and their shared password are published on purpose for review; a real deployment would remove them and add sign-up.
