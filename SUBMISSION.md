@@ -5,9 +5,7 @@
 
 ## Links
 - **Live application URL:** _Not deployed yet._ Deployment steps are in `README.md` (Turso + Vercel; needs account credentials).
-- **GitHub repository:** _Not created._
-- **Google Drive folder:** https://drive.google.com/drive/folders/1ojwG8T0hstL3HeigGPS-YCXGkTnNwUSA
-- **Walkthrough video:** _Not recorded._ `VIDEO_URL.txt` holds a placeholder to replace.
+- **GitHub repository:** https://github.com/dntwaritag/ajaia-collaborative-docs
 
 ## What is included
 | Item | Path |
@@ -17,8 +15,6 @@
 | Architecture note | `ARCHITECTURE.md` |
 | AI workflow note | `AI_WORKFLOW.md` |
 | This file | `SUBMISSION.md` |
-| Video script (3–5 min) | `VIDEO_SCRIPT.md` |
-| Video URL placeholder | `VIDEO_URL.txt` |
 | Env template | `.env.example` |
 | Automated tests | `tests/documents.test.ts`, `tests/import-validation.test.ts` (Vitest); `e2e/run.mjs` (browser) |
 | Screenshots | `docs/screenshots/*.png` |
@@ -43,7 +39,6 @@ Create / rename / edit / autosave / reopen / delete documents; rich text with pe
 
 ## Incomplete / not done
 - Public deployment (no Vercel/Turso credentials available to the build).
-- Walkthrough video and GitHub repository (to be created by the candidate).
 - Real-time co-editing (last save wins), sign-up/invites/password reset, export, comments, version history, attachments.
 - Only headless Chrome was tested; no manual cross-browser or screen-reader testing.
 
